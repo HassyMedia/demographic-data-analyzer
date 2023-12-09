@@ -25,3 +25,12 @@ min_hours_per_week = data['hours-per-week'].min()
 
 # 7. Percentage of people working minimum hours per week earning >50K
 perc_min_hours_more_than_50K = (data[(data['hours-per-week'] == min_hours_per_week) & (data['salary'] == '>50K')]).shape[0] / data[data['hours-per-week'] == min_hours_per_week].shape[0] * 100
+
+# 8. Country with highest percentage of people earning >50K
+country_salary_counts = data.groupby('native-country')['salary'].value_counts(normalize=True).unstack()
+highest_earning_country, highest_earning_country_perc = country_salary_counts['>50K'].idxmax(), country_salary_counts['>50K'].max() * 100
+
+# 9. Most popular occupation for those who earn >50K in India
+top_occupation_india = data[(data['native-country'] == 'India') & (data['salary'] == '>50K')]['occupation'].mode()[0]
+
+
