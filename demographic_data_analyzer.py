@@ -9,3 +9,6 @@ race_count = data['race'].value_counts()
 
 # 2. Average age of men
 average_age_men = data[data['sex'] == 'Male']['age'].mean()
+
+# 3. Percentage of people with a Bachelor's degree
+bachelors_deg = (data['education'] == 'Bachelors').mean() * 100
