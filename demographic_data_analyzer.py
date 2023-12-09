@@ -19,3 +19,9 @@ perc_adv_edu_more_than_50K = (data[advanced_edu & (data['salary'] == '>50K')]).s
 
 # 5. Percentage of people without advanced education earning >50K
 perc_no_adv_edu_more_than_50K = (data[~advanced_edu & (data['salary'] == '>50K')]).shape[0] / data[~advanced_edu].shape[0] * 100
+
+# 6. Minimum hours per week
+min_hours_per_week = data['hours-per-week'].min()
+
+# 7. Percentage of people working minimum hours per week earning >50K
+perc_min_hours_more_than_50K = (data[(data['hours-per-week'] == min_hours_per_week) & (data['salary'] == '>50K')]).shape[0] / data[data['hours-per-week'] == min_hours_per_week].shape[0] * 100
