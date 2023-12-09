@@ -33,4 +33,15 @@ highest_earning_country, highest_earning_country_perc = country_salary_counts['>
 # 9. Most popular occupation for those who earn >50K in India
 top_occupation_india = data[(data['native-country'] == 'India') & (data['salary'] == '>50K')]['occupation'].mode()[0]
 
+# Print the results
+print("Race Count:\n", race_count)
+print("\nAverage Age of Men:", average_age_men)
+print("\nPercentage of People with a Bachelor's Degree:", bachelors_deg)
+print("\nPercentage of People with Advanced Education Earning More Than 50K:", perc_adv_edu_more_than_50K)
+print("\nPercentage of People Without Advanced Education Earning More Than 50K:", perc_no_adv_edu_more_than_50K)
+print("\nMinimum Hours per Week:", min_hours_per_week)
+print("\nPercentage of People Working Minimum Hours per Week Earning More Than 50K:", perc_min_hours_more_than_50K)
+print("\nCountry with the Highest Percentage of People Earning More Than 50K:", highest_earning_country, "with", highest_earning_country_perc, "%")
+print("\nMost Popular Occupation for Those Who Earn More Than 50K in India:", top_occupation_india)
+
 
